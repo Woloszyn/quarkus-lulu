@@ -1,0 +1,1 @@
+alter table Tournament modify column max_quantity integer

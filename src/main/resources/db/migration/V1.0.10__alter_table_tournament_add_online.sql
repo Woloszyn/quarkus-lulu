@@ -1,0 +1,1 @@
+ALTER TABLE tournament ADD COLUMN online BIT(1) NOT NULL DEFAULT 0;

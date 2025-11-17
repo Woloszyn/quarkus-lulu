@@ -1,0 +1,2 @@
+ALTER TABLE tournament ADD COLUMN place BIGINT NOT NULL;
+ALTER TABLE tournament ADD FOREIGN KEY (place) REFERENCES place(id);
