@@ -1,0 +1,8 @@
+CREATE TABLE IF NOT EXISTS tournament_additional_info_subscription (
+  id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  additional_info_id BIGINT NOT NULL,
+  `value` VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (additional_info_id) REFERENCES tournament_additional_info(id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
