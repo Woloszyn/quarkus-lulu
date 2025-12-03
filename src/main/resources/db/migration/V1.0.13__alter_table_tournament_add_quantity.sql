@@ -1,0 +1,1 @@
+alter table Customer ADD column password_hash VARCHAR(255) NOT NULL;

@@ -41,7 +41,7 @@ public class GetTournament {
         List<Tournament> tournaments = tournamentRepository.listAll();
         return tournaments.stream()
                 .map(t-> this.mapToDTO(t, customerIdRequest))
-                .filter(t -> t.getStatus() == TournamentStatus.CREATED)
+                .filter(t -> t.getStatus() == TournamentStatus.CREATED || t.getStatus() == TournamentStatus.ONGOING)
                 .toList();
     }
 

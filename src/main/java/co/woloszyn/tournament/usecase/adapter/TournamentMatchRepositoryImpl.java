@@ -23,7 +23,7 @@ public class TournamentMatchRepositoryImpl implements TournamentMatchRepository 
 
     @Override
     public void updateWinner(Long winnerId, Long matchId, String scoreBoard) {
-        update("winner.id = ?1, scoreBoard = ?2, updatedAt = ?3 where id = ?4",
+        update("winner.id = ?1, scoreboard = ?2, updatedAt = ?3 where id = ?4",
                 winnerId, scoreBoard, LocalDateTime.now(), matchId);
     }
 }

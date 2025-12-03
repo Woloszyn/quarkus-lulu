@@ -1,11 +1,18 @@
 package co.woloszyn.customer.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 @Entity
-public class Customer extends PanacheEntity {
+public class Customer extends PanacheEntityBase {
+
+    @Id
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.IDENTITY)
+    private Long id;
 
     private String name;
 
@@ -42,6 +49,10 @@ public class Customer extends PanacheEntity {
 
     public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }
 
